@@ -10,7 +10,8 @@ import HelloWorld from '@/components/HelloWorld.vue'
     <div class="wrapper">
 
       <nav>
-        <RouterLink to="/signup-page">Sign Up/Login</RouterLink>
+        <RouterLink to="/signup-page">Sign Up</RouterLink>
+        <RouterLink to="/login">Login</RouterLink>
 
         <RouterLink to="/">Home</RouterLink>
       </nav>

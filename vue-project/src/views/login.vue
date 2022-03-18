@@ -1,26 +1,59 @@
 <template>
-  <div class="login">
-    <div class="field" id="email">
-      <label class="label">E-mail</label>
-      <input
-        v-model="email"
-        class="input"
-        type="text"
-        autocomplete="email"
-        placeholder="example@email.com"
-      />
+  <div class="columns">
+    <div class="column is-half is-offset-one-quarter">
+      <div class="card">
+        <div class="card-content">
+          <div
+            v-if="validationErrors.length"
+            class="notification is-danger is-light"
+          >
+            <div class="content">
+              Please resolve the following error(s) before proceeding.
+              <ul style="margin-top:0.3em; margin-left: 1em">
+                <li
+                  v-for="(error, index) in validationErrors"
+                  :key="`error-${index}`"
+                  v-html="error"
+                />
+              </ul>
+            </div>
+          </div>
+          <form>
+            <div class="field">
+              <label class="label">E-mail</label>
+              <div class="control">
+                <input
+                  v-model="email"
+                  class="input"
+                  type="text"
+                  autocomplete="email"
+                  placeholder="example@email.com"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Password</label>
+              <div class="control">
+                <input
+                  v-model="password"
+                  class="input"
+                  type="password"
+                  autocomplete="current-password"
+                  placeholder="Password"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <p class="control">
+                <button @click="resetError()"  @click.prevent="validate()" class="button is-success">
+                  Login
+                </button>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-    <div class="field" id="password">
-      <label class="label">Password</label>
-      <input
-        v-model="password"
-        class="input"
-        type="text"
-        autocomplete="password"
-        placeholder="password"
-      />
-    </div>
-    <button @click.prevent="signIn()" class="button is-success">Login</button>
   </div>
 </template>
 
