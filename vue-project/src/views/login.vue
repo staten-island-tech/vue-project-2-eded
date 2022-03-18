@@ -4,11 +4,9 @@
       <div class="card">
         <div class="card-content">
           <div
-            v-if="validationErrors.length"
-            class="notification is-danger is-light"
-          >
-            <div class="content">
-              Please resolve the following error(s) before proceeding.
+            v-if="validationErrors.length"          >
+            <div class="words">
+              Please resolve the following errors before proceeding.
               <ul style="margin-top:0.3em; margin-left: 1em">
                 <li
                   v-for="(error, index) in validationErrors"
@@ -18,10 +16,8 @@
               </ul>
             </div>
           </div>
-          <form>
-            <div class="field">
-              <label class="label">E-mail</label>
-              <div class="control">
+            <div class="field" id="email">
+              <label >E-mail</label>
                 <input
                   v-model="email"
                   class="input"
@@ -31,9 +27,8 @@
                 />
               </div>
             </div>
-            <div class="field">
-              <label class="label">Password</label>
-              <div class="control">
+            <div class="field" id="password">
+              <label>Password</label>
                 <input
                   v-model="password"
                   class="input"
@@ -41,20 +36,15 @@
                   autocomplete="current-password"
                   placeholder="Password"
                 />
-              </div>
             </div>
-            <div class="field">
-              <p class="control">
-                <button @click="resetError()"  @click.prevent="validate()" class="button is-success">
+            <div>
+                <button @click="resetError()"  @click.prevent="validate()" >
                   Login
                 </button>
-              </p>
             </div>
-          </form>
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <style>
