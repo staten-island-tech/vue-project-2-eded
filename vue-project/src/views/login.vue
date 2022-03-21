@@ -38,7 +38,7 @@
                 />
             </div>
             <div>
-                <button   @click.prevent="validate()" >
+                <button @click.prevent="validate()" >
                   Login
                 </button>
             </div>
