@@ -7,7 +7,7 @@
             v-if="validationErrors.length"          >
             <div class="words">
               Please resolve the following errors before proceeding.
-              <ul style="margin-top:0.3em; margin-left: 1em">
+              <ul>
                 <li
                   v-for="(error, index) in validationErrors"
                   :key="`error-${index}`"
@@ -16,7 +16,7 @@
               </ul>
             </div>
           </div>
-            <div class="field" id="email">
+            <div  id="email">
               <label >E-mail</label>
                 <input
                   v-model="email"
@@ -27,7 +27,7 @@
                 />
               </div>
             </div>
-            <div class="field" id="password">
+            <div  id="password">
               <label>Password</label>
                 <input
                   v-model="password"
@@ -66,11 +66,9 @@ export default {
     };
   },
   methods: {
-    resetError() {
-      this.validationErrors = [];
-    },
+  
     validate() {
-      this.resetError();
+      this.validationErrors = [];
       if (!this.email) {
         this.validationErrors.push("<strong>E-mail</strong> cannot be empty.");
       }
