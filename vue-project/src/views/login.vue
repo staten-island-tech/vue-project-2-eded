@@ -1,5 +1,4 @@
 <template>
-  <div class="columns">
       <div class="card">
         <div class="card-content">
           <div
@@ -15,8 +14,8 @@
               </ul>
             </div>
           </div>
-            <div  id="email">
-              <label >E-mail</label>
+            <div id="email">
+              <label>E-mail</label>
                 <input
                   v-model="email"
                   class="input"
@@ -42,7 +41,6 @@
                 </button>
             </div>
         </div>
-    </div>
 </template>
 
 <style>
