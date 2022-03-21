@@ -3,7 +3,6 @@
         <div class="card-content">
           <div
             v-if="validationErrors.length"
-            class="notification is-danger is-light"
           >
             <button @click="resetError()" class="delete"></button>
             <div class="content">
