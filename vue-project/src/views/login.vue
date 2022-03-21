@@ -2,7 +2,7 @@
       <div class="card">
         <div class="card-content">
           <div
-            v-if="validationErrors.length"          >
+            v-if="validationErrors.length">
             <div class="words">
               Please resolve the following errors before proceeding.
               <ul>
@@ -35,11 +35,9 @@
                   placeholder="Password"
                 />
             </div>
-            <div>
                 <button @click.prevent="validate()" >
                   Login
                 </button>
-            </div>
         </div>
 </template>
 

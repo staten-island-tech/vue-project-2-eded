@@ -17,7 +17,6 @@
               </ul>
             </div>
           </div>
-          <form>
             <div>
               <label>E-mail</label>
               <div class="control">
@@ -54,14 +53,9 @@
                 />
               </div>
             </div>
-            <div class="field">
-              <p class="control">
                 <button @click.prevent="validate()">
                   Register
                 </button>
-              </p>
-            </div>
-          </form>
         </div>
   
 </template>
