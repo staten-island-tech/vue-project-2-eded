@@ -4,7 +4,6 @@
           <div
             v-if="validationErrors.length"
           >
-            <button @click="resetError()" class="delete"></button>
             <div class="content">
               Please resolve the following error(s) before proceeding.
               <ul>
