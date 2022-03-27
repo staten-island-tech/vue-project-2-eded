@@ -111,9 +111,9 @@ export default {
   margin: 5rem auto;
   display: flex;
   flex-direction: column;
-  border-radius: 1rem;
-  z-index: 2;
-  box-shadow: 5px 6px 10px 3px rgba(0, 0, 0, 0.79);
+  border-radius: 2rem;
+  z-index: 3;
+  box-shadow: 5px 6px 10px 3px rgba(1, 0, 0, 0.79);
   @media screen and (max-width: 992px) {
     width: 90%;
   }
