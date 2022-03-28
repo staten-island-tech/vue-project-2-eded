@@ -9,19 +9,22 @@
           type="email"
           name="email"
           v-model="email"
+          autocomplete="email"
+          placeholder="example@email.com"
           class="input"
           required
+
         />
       </div>
       <div class="pcontainer">
         <label for="email" class="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          v-model="password"
-          class="input"
-          required
-        />
+     <input
+                  v-model="email"
+                  class="input"
+                  type="text"
+                  autocomplete="email"
+                  placeholder="example@email.com"
+                />
       </div>
       <div class="error" v-if="error">{{ error }}</div>
       <div class="login"><Button class="button">LOGIN</Button></div>
@@ -104,6 +107,7 @@ export default {
   display: block;
   width: 100%;
   height: 3rem;
+  color: black;
 }
 .login {
   padding: 1.5rem;
