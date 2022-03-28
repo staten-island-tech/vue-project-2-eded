@@ -18,12 +18,12 @@
       </div>
       <div class="pcontainer">
         <label for="email" class="password">Password</label>
-     <input
-                  v-model="email"
+      <input
+                  v-model="password"
                   class="input"
-                  type="text"
-                  autocomplete="email"
-                  placeholder="example@email.com"
+                  type="password"
+                  autocomplete="current-password"
+                  placeholder="Password"
                 />
       </div>
       <div class="error" v-if="error">{{ error }}</div>
