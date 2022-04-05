@@ -1,40 +1,35 @@
 <script>
-    export default {
-       data() {
-            return {};
-        },
-        props: {
-            docID: String
-        },
-              mounted: function () { firestore.collection("pages").doc(this.docID)
-            .onSnapshot(function(doc) {
-                document.querySelector('#input-area')
-                .value = doc.data().content;
-            });
-        },
-                methods: {}  };
+export default {
+  data() {
+    return {};
+  },
+  props: {
+    docID: String,
+  },
+
+  methods: {
+    savedoc: function () {
+      
+    },
+  },
+};
 </script>
 
 <template>
-
-  <div class="about" >
-    
+  <div class="about">
     <h1 class="abouttext">Home Screen</h1>
     <div class="edit-content">
-  <p class="loading" id="loading">Saving document....</p>
-  <div class="editor" contenteditable="true" id="editor"></div>
-</div>
+      <p class="loading" id="loading">Saving document....</p>
+      <div class="editor" contenteditable="true" id="editor"></div>
+    </div>
+    <button @click="savedoc">SAVE</button>
   </div>
 </template>
 
 <style scoped>
-
 .edit-content {
   font-size: 12rem;
-  
 }
-
-
 </style>
 let userId = '';
 let userName = '';
