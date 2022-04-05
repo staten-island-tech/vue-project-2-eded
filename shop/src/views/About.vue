@@ -1,7 +1,18 @@
 <script>
-export default {
-  components: {},
-};
+    export default {
+       data() {
+            return {};
+        },
+        props: {
+            docID: String
+        },
+              mounted: function () { firestore.collection("pages").doc(this.docID)
+            .onSnapshot(function(doc) {
+                document.querySelector('#input-area')
+                .value = doc.data().content;
+            });
+        },
+                methods: {}  };
 </script>
 
 <template>
@@ -25,3 +36,29 @@ export default {
 
 
 </style>
+let userId = '';
+let userName = '';
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    userId = user.uid;
+    userName = user.displayName;
+    init();
+  } else {
+    console.log(user + '' + 'logged out');
+  }
+});
+
+function init(){
+  const token = localStorage.getItem('token');
+  if(!token){
+    const docId = firebase.firestore().collection('docs')
+                                      .doc(userId)
+                                      .collection('documents')
+                                      .doc().id;
+      localStorage.setItem('token', docId);
+    }else{
+        delay(function(){
+          getSingleDocDetails(token);
+        }, 1000 );
+    }
+}
