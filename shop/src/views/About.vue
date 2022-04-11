@@ -8,31 +8,7 @@ export default {
   },
 
   methods: {
-    addToFirebase: function () {
-      firestore
-        .collection("pages")
-        .doc(this.docID)
-        .set(
-          {
-            content: this.doc().value,
-          },
-          { merge: true }
-        )
-        .then(function (docRef) {
-          if (docRef) {
-            // will do something here
-          }
-
-          let ind = document.querySelector("#saving-indicator");
-          ind.innerHTML = "saved!";
-
-          setTimeout(function () {
-            ind.classList.add("hide");
-            ind.innerHTML = "saving...";
-          }, 3000);
-        });
-    },
-  },
+  }
 };
 </script>
 
@@ -50,7 +26,6 @@ export default {
     <button @click="savedoc">SAVE</button>
   </div>
 </template>
-
 <style scoped>
 .edit-content {
   font-size: 12rem;
