@@ -1,5 +1,6 @@
 <script>
 export default {
+  
   data() {
     return {};
   },
@@ -9,6 +10,7 @@ export default {
 
   methods: {
   }
+
 };
 </script>
 
@@ -22,6 +24,7 @@ export default {
       v-on:keyup="processContent"
       class="card"
       placeholder="Start typing here..."
+      v-model="value"
     ></textarea>
     <button @click="savedoc">SAVE</button>
   </div>
