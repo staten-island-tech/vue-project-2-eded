@@ -30,4 +30,14 @@ export default {
 .edit-content {
   font-size: 12rem;
 }
+#input-area{
+  size: 100%;
+  font-size:3rem;
+  height: 70rem;
+  width: 100%;
+}
+button{
+  height: 5rem;
+  width: 8rem;
+font-size: 3rem;}
 </style>
