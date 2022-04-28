@@ -4,16 +4,17 @@ export default {
    
   },
   data() {
-    return {};
+    return {
+      text:{value:""}
+    };
   },
   props: {
     docID: String,
   },
-
   methods: {
-    post:function(){this.$http.post('https://console.firebase.google.com/project/fir-fc9df/database/fir-fc9df-default-rtdb/data/~2F',{
-      body:this.content
-    }).then
+    post:function(){this.$http.post('https://console.firebase.google.com/project/fir-fc9df/database/fir-fc9df-default-rtdb/data/~2F',this.text
+    ).then(function(data){console.log(data);
+    this.submitted=true})
     
     }
   }
@@ -31,9 +32,9 @@ export default {
       v-on:keyup="processContent"
       class="text"
       placeholder="Start typing here..."
-      v-model="value"
+      v-model="text.value"
     ></textarea>
-    <button @click="savedoc">SAVE</button>
+    <button  v-on:click.prevent="post">SAVE</button>
   </div>
 </template>
 <style scoped>
