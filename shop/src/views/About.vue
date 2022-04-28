@@ -11,6 +11,11 @@ export default {
   },
 
   methods: {
+    post:function(){this.$http.post('https://console.firebase.google.com/project/fir-fc9df/database/fir-fc9df-default-rtdb/data/~2F',{
+      body:this.content
+    }).then
+    
+    }
   }
 
 };
