@@ -1,6 +1,8 @@
 <script>
 export default {
-  
+  setup(){
+   
+  },
   data() {
     return {};
   },
@@ -22,7 +24,7 @@ export default {
       v-on:focus="documentFocused"
       v-on:blur="documentBlurred"
       v-on:keyup="processContent"
-      class="card"
+      class="text"
       placeholder="Start typing here..."
       v-model="value"
     ></textarea>
