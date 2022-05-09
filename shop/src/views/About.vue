@@ -1,4 +1,5 @@
 <script>
+
 export default {
   setup(){
    
@@ -12,14 +13,17 @@ export default {
     docID: String,
   },
   methods: {
-    post:function(){this.$http.post('https://console.firebase.google.com/project/fir-fc9df/database/fir-fc9df-default-rtdb/data/~2F',this.text
-    ).then(function(data){console.log(data);
-    this.submitted=true})
-    
-    }
+    changeText: function(event) {
+        this.text = event.target.value;
+      },
+      changeFontSize: function(event) {
+        this.fontSize = event.target.value + 'px';
+      },
+  
   }
 
 };
+
 </script>
 
 <template>
@@ -34,6 +38,7 @@ export default {
       placeholder="Start typing here..."
       v-model="text.value"
     ></textarea>
+     <input type="number" value='17' @input="changeFontSize"><span> px </span>
     <button  v-on:click.prevent="post">SAVE</button>
   </div>
 </template>
@@ -51,4 +56,9 @@ button{
   height: 5rem;
   width: 8rem;
 font-size: 3rem;}
+input{
+  height: 5rem;
+  width: 8rem;
+  font-size: 3rem; 
+}
 </style>
