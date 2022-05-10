@@ -28,7 +28,6 @@ export default {
     <textarea
       id="input-area"
       v-on:focus="documentFocused"
-      v-on:blur="documentBlurred"
       v-on:keyup="processContent"
       class="text"
       placeholder="Start typing here..."
