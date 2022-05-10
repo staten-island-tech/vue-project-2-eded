@@ -27,8 +27,6 @@ export default {
     <h1 class="abouttext">Home Screen</h1>
     <textarea
       id="input-area"
-      v-on:focus="documentFocused"
-      v-on:keyup="processContent"
       class="text"
       placeholder="Start typing here..."
       v-model="text.value"
