@@ -11,6 +11,7 @@
           v-model="email"
           class="input"
           required
+          placeholder="example@gmail.com"
         />
       </div>
       <div class="pcontainer">
@@ -19,8 +20,10 @@
           type="password"
           name="password"
           v-model="password"
+          placeholder="Password needs to be at least 6 characters"
           class="input"
           required
+
         />
       </div>
       <div class="error" v-if="error">{{ error }}</div>

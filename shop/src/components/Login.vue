@@ -26,6 +26,7 @@
                   placeholder="Password"
                 />
       </div>
+      
       <div class="error" v-if="error">{{ error }}</div>
       <div class="login"><Button class="button">LOGIN</Button></div>
     </div>
@@ -117,5 +118,8 @@ export default {
 }
 .button {
   width: 100%;
+}
+.error{
+  font-size: 2rem;
 }
 </style>

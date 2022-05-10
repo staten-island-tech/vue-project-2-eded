@@ -31,7 +31,7 @@ export default {
       placeholder="Start typing here..."
       v-model="text.value"
     ></textarea>
-    <button  v-on:click.prevent="post">SAVE</button>
+    <button v-on:click.prevent="post">SAVE</button>
   </div>
 </template>
 <style scoped>
