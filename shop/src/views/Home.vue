@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1 class="hometext">Home</h1>
+    <img src="../assets/bigface.jpg" alt="">
   </div>
 </template>
 
