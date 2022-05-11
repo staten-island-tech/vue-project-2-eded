@@ -109,7 +109,7 @@ export default {
 }
 .input {
   display: block;
-  width: 100%;
+  width: 40rem;
   height: 3rem;
   font-size: 2rem;
 }
