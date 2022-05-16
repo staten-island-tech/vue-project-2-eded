@@ -2,7 +2,7 @@
 
 <template>
   <div class="about">
-    <h1 class="abouttext">Home Screen</h1>
+    <h1 class="abouttext" data-v-039c5b43="" style="font-size: 5rem; margin: 2rem;">WRITE</h1>
     <textarea
       id="input-area"
       class="text"
@@ -62,5 +62,8 @@ button {
   height: 5rem;
   width: 8rem;
   font-size: 3rem;
+}
+#abouttext {
+  font-size: 2rem;
 }
 </style>
