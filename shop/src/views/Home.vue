@@ -1,12 +1,14 @@
 <template>
   <div class="home">
     <h1 class="hometext">Home</h1>
-    <img src="../assets/wendy.png" alt="">
+    <img src="/src/assets/wendy.png" id="pfp" style="position: relative;
+    left: 700px;
+    width: 500px;
+    height: auto;">
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
 import { useStore } from "vuex";
 export default {
   setup() {
@@ -33,8 +35,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .hometext {
   font-size: 5rem;
+  margin-right: 5rem;
 }
+
+
 </style>
+
+
+
