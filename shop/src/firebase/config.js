@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import {getDatabase,ref, set} from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCy_lR1N2tIuHIUOIeJIGQ02HnwO3Auc4Q",
@@ -17,14 +16,5 @@ initializeApp(firebaseConfig);
 
 //initfirebase auth
 const auth = getAuth();
-
-
-const db= getDatabase();
-const reference = ref(db, 'users/' + userId);
-
-set(reference, {
-  username: name,
-  email: email,
-});
 
 export { auth };
