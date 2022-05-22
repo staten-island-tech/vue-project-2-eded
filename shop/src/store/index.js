@@ -37,6 +37,9 @@ export default createStore({
       state.isSignup = false;
     },
   },
+  getters:{
+    uid:state=>state.user.uid
+  },
   actions: {
     async signup(context, { email, password }) {
       console.log("signup action");

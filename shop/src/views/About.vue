@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import {db} from "../firebase/config"
+import {setDoc,doc} from "firebase/firestore"
 
 export default {
   setup() {},
@@ -38,13 +40,15 @@ export default {
     //     });
     // },
 
-    submit() {
-      const databaseRef = firebase.database();
-      databaseRef.ref("users/").set({
-        text: this.text,
-      });
+    async submit() {
+      await setDoc(doc(db,"users","test"),{
+        text:this.text.value
+      })
+     console.log(this.$store.user)
+      
     },
   },
+  
 };
 </script>
 
