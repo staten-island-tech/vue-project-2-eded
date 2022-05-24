@@ -15,10 +15,14 @@
 
 <script>
 import {db} from "../firebase/config"
-import {setDoc,doc} from "firebase/firestore"
+import {setDoc,doc, getDoc} from "firebase/firestore"
+import { useStore } from "vuex";
 
 export default {
-  setup() {},
+  setup() {
+    const store = useStore()
+    return {store}
+  },
   data() {
     return {
       text: { value: "" },
@@ -28,25 +32,20 @@ export default {
     docID: String,
   },
   methods: {
-    // post: function () {
-    //   this.$http
-    //     .post(
-    //       "https://console.firebase.google.com/project/fir-fc9df/database/fir-fc9df-default-rtdb/data/~2F",
-    //       this.text
-    //     )
-    //     .then(function (data) {
-    //       console.log(data);
-    //       this.submitted = true;
-    //     });
-    // },
-
     async submit() {
-      await setDoc(doc(db,"users","test"),{
+      await setDoc(doc(db,"users",this.store.state.user.uid),{
         text:this.text.value
       })
-     console.log(this.$store.user)
-      
     },
+    async load() {
+      const docRef = doc(db, "users", this.store.state.user.uid);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        this.text.value = docSnap.data().text;
+      } else {
+        console.log("No such document!");
+      }
+    }
   },
   
 };
