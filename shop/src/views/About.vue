@@ -10,6 +10,8 @@
       v-model="text.value"
     ></textarea>
     <button @click="submit()">SAVE</button>
+    <button @click="load()">LOAD</button>
+
   </div>
 </template>
 
