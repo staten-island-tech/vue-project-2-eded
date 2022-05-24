@@ -11,7 +11,7 @@
     ></textarea>
     <button @click="submit()">SAVE</button>
     <button @click="load()">LOAD</button>
-    <button @click="deletedata()">LOAD</button>
+    <button @click="deletedata()">Delete Account and Data</button>
 
   </div>
 </template>
