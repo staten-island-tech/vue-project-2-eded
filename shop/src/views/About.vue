@@ -11,14 +11,17 @@
     ></textarea>
     <button @click="submit()">SAVE</button>
     <button @click="load()">LOAD</button>
+    <button @click="deletedata()">LOAD</button>
 
   </div>
 </template>
 
 <script>
-import {db} from "../firebase/config"
-import {setDoc,doc, getDoc} from "firebase/firestore"
-import { useStore } from "vuex";
+import { deleteUser } from "firebase/auth";
+
+import {db, auth} from "../firebase/config"
+import {setDoc,doc, getDoc, deleteDoc} from "firebase/firestore"
+import { useStore } from "vuex";  
 
 export default {
   setup() {
@@ -37,7 +40,22 @@ export default {
     async submit() {
       await setDoc(doc(db,"users",this.store.state.user.uid),{
         text:this.text.value
-      })
+      }).catch((error) => {
+alert("user not logged in") 
+})
+    },
+       async deletedata() {
+      await deleteDoc(doc(db,"users",this.store.state.user.uid),{
+      });
+      const user = auth.currentUser;
+await deleteUser(user).then(() => {
+  alert("user has been deleted")
+}).catch((error) => {
+alert("user does not exist") 
+});
+location.reload();
+
+
     },
     async load() {
       const docRef = doc(db, "users", this.store.state.user.uid);
