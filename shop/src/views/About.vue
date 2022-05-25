@@ -3,6 +3,8 @@
 <template>
   <div class="about">
     <h1 class="abouttext" data-v-039c5b43="" style="font-size: 5rem; margin: 2rem;">WRITE</h1>
+    <button class="delete" data-v-039c5b43="" style="width: 30rem;">Delete Account and Data</button>
+    <button @click="print()">Print</button>
     <textarea
       id="input-area"
       class="text"
@@ -11,8 +13,7 @@
     ></textarea>
     <button @click="submit()">SAVE</button>
     <button @click="load()">LOAD</button>
-    <button @click="deletedata()">Delete Account and Data</button>
-    <button @click="print()"></button>
+   
 
   </div>
 </template>
@@ -92,11 +93,17 @@ location.reload();
   width: 100%;
 }
 button {
-  height: 5rem;
-  width: 8rem;
-  font-size: 3rem;
+  height: 10rem;
+  width: 10rem;
+  font-size: 2rem;
+  margin: 3rem;
+  color: aqua;
+  background-color: blueviolet;
 }
 #abouttext {
   font-size: 2rem;
+}
+#delete{
+  
 }
 </style>
