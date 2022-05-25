@@ -12,6 +12,7 @@
     <button @click="submit()">SAVE</button>
     <button @click="load()">LOAD</button>
     <button @click="deletedata()">Delete Account and Data</button>
+    <button @click="print()"></button>
 
   </div>
 </template>
@@ -37,6 +38,15 @@ export default {
     docID: String,
   },
   methods: {
+     print() {
+      var prtContent = document.getElementById('input-area');
+      var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+      WinPrint.document.write(prtContent.value);
+      WinPrint.document.close();
+      WinPrint.focus();
+      WinPrint.print();
+      WinPrint.close();
+    },
     async submit() {
       await setDoc(doc(db,"users",this.store.state.user.uid),{
         text:this.text.value
