@@ -3,8 +3,8 @@
 <template>
   <div class="about">
     <h1 class="abouttext" data-v-039c5b43="" style="font-size: 5rem; margin: 2rem;">WRITE</h1>
-    <button class="delete" data-v-039c5b43="" style="width: 30rem;">Delete Account and Data</button>
-    <button @click="print()">Print</button>
+    <button class="delete" data-v-039c5b43="" style="width: 30rem;">DELETE ACCOUNT AND DATA</button>
+    <button @click="print()">PRINT</button>
     <textarea
       id="input-area"
       class="text"
