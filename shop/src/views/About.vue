@@ -39,8 +39,8 @@ export default {
   },
   methods: {
      print() {
-      var prtContent = document.getElementById('input-area');
-      var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+      const prtContent = document.getElementById('input-area');
+      const WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
       WinPrint.document.write(prtContent.value);
       WinPrint.document.close();
       WinPrint.focus();
