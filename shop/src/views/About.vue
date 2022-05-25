@@ -3,7 +3,7 @@
 <template>
   <div class="about">
     <h1 class="abouttext" data-v-039c5b43="" style="font-size: 5rem; margin: 2rem;">WRITE</h1>
-    <button class="delete" data-v-039c5b43="" style="width: 30rem;">DELETE ACCOUNT AND DATA</button>
+    <button class="delete" data-v-039c5b43="" style="width: 30rem;" @click="deletedata()">DELETE ACCOUNT AND DATA</button>
     <button @click="print()">PRINT</button>
     <textarea
       id="input-area"
@@ -49,33 +49,38 @@ export default {
       WinPrint.close();
     },
     async submit() {
+      try{
       await setDoc(doc(db,"users",this.store.state.user.uid),{
         text:this.text.value
-      }).catch((error) => {
-alert("user not logged in") 
-})
+      })} catch (e) {
+    alert('user not signed in');
+}
     },
        async deletedata() {
+         try{
       await deleteDoc(doc(db,"users",this.store.state.user.uid),{
       });
       const user = auth.currentUser;
 await deleteUser(user).then(() => {
   alert("user has been deleted")
-}).catch((error) => {
-alert("user does not exist") 
-});
+})
 location.reload();
+} catch (e) {
+    alert('user not signed in');
+}
 
 
     },
     async load() {
+      try {
+
       const docRef = doc(db, "users", this.store.state.user.uid);
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
         this.text.value = docSnap.data().text;
-      } else {
-        console.log("No such document!");
-      }
+      } } catch (e) {
+    alert('user not signed in/document does not exist');
+}
     }
   },
   
@@ -103,7 +108,5 @@ button {
 #abouttext {
   font-size: 2rem;
 }
-#delete{
-  
-}
+
 </style>
