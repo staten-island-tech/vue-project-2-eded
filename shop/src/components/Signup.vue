@@ -121,4 +121,7 @@ export default {
 .button {
   width: 100%;
 }
+.error{
+  font-size: 2rem;
+}
 </style>
