@@ -52,7 +52,9 @@ export default {
       try{
       await setDoc(doc(db,"users",this.store.state.user.uid),{
         text:this.text.value
-      })} catch (e) {
+      })
+      alert('document saved successfully')
+      } catch (e) {
     alert('user not signed in');
 }
     },
