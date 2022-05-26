@@ -5,7 +5,7 @@
     <div class="container">
       <div class="econtainer">
         <label for="email" class="email">Email</label>
-        <input
+        <label><input
           type="email"
           name="email"
           v-model="email"
@@ -14,18 +14,20 @@
           class="input"
           required
 
-        />
+        /> :D </label>
       </div>
       <div class="pcontainer">
         <label for="email" class="password">Password</label>
-      <input
+      
+      <label><input
                   v-model="password"
                   class="input"
                   type="password"
                   autocomplete="current-password"
                   placeholder="Password"
-                />
-      </div>
+               
+                /> :D </label>
+      </div> 
       
       <div class="error" v-if="error">{{ error }}</div>
       <div class="login"><Button class="button">LOGIN</Button></div>
@@ -90,6 +92,7 @@ export default {
   width: fit-content;
   margin: 0 auto;
   padding-top: 1rem;
+
 }
 .container {
   margin-left: 1rem;
@@ -116,6 +119,7 @@ export default {
   width: 100%;
   font-size: 3rem;
 }
+
 .button {
   width: 100%;
 }

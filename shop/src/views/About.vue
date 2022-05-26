@@ -1,7 +1,7 @@
 
 
 <template>
-  <div class="about">
+  <label><div class="about">
     <h1 class="abouttext" data-v-039c5b43="" style="font-size: 5rem; margin: 2rem;">WRITE</h1>
     <button class="delete" data-v-039c5b43="" style="width: 30rem;" @click="deletedata()">DELETE ACCOUNT AND DATA</button>
     <button @click="print()">PRINT</button>
@@ -15,7 +15,7 @@
     <button @click="load()">LOAD</button>
    
 
-  </div>
+  </div></label>
 </template>
 
 <script>

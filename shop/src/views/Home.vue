@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1 class="hometext">Home</h1>
-    <img src="/src/assets/wendy.png" id="pfp" style="position: relative;
+    <img src="/src/assets/wendy.png" alt="wendy" id="pfp" style="position: relative;
     left: 700px;
     width: 500px;
     height: auto;">

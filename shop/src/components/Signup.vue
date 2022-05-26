@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="handleSubmit" class="form">
-    <h3 class="logtext">SIGN UP</h3>
+    <h1 class="logtext">SIGN UP</h1>
     <iconClose class="modal__close" @click="closeModal"></iconClose>
     <div class="container">
       <div class="econtainer">
